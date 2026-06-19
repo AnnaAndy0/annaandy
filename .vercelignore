@@ -1,0 +1,5 @@
+# not needed in production
+design_handoff/
+scripts/
+styles.scss
+*.md
