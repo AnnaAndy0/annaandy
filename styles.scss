@@ -652,10 +652,8 @@ section { scroll-margin-top: 54px; }
     }
 
     .sp-artist {
-      display: flex; align-items: center; gap: 6px;
       font-size: 13px; font-weight: 500; color: #4a7a55; margin-top: 5px;
-      overflow: hidden;
-      span:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
 
     .sp-dot {

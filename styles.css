@@ -1017,16 +1017,10 @@ section {
   margin-bottom: 12px;
 }
 .curr-card.listen .sp-artist {
-  display: flex;
-  align-items: center;
-  gap: 6px;
   font-size: 13px;
   font-weight: 500;
   color: #4a7a55;
   margin-top: 5px;
-  overflow: hidden;
-}
-.curr-card.listen .sp-artist span:last-child {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
