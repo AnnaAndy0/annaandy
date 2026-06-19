@@ -1006,6 +1006,16 @@ section {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+.curr-card.listen .sp-live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a7a55;
+  margin-bottom: 12px;
+}
 .curr-card.listen .sp-artist {
   display: flex;
   align-items: center;
