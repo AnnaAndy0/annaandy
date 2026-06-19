@@ -1007,32 +1007,26 @@ section {
   -webkit-box-orient: vertical;
 }
 .curr-card.listen .sp-artist {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 13px;
   font-weight: 500;
   color: #4a7a55;
   margin-top: 5px;
+  overflow: hidden;
+}
+.curr-card.listen .sp-artist span:last-child {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.curr-card.listen .sp-live {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #4a7a55;
-  margin-top: 10px;
 }
 .curr-card.listen .sp-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #1ed760;
   flex-shrink: 0;
+  background: #1ed760;
   animation: sp-pulse 1.8s ease-in-out infinite;
 }
 .curr-card.read {
