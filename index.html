@@ -691,17 +691,25 @@
 
   // ── Spotify now playing ────────────────────────────────────────────────
   (function () {
-    fetch('/api/now-playing')
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (data) {
-        if (!data || !data.isPlaying) return;
-        document.getElementById('sp-art').src        = data.albumArt || '';
-        document.getElementById('sp-track').textContent  = data.title;
-        document.getElementById('sp-artist').textContent = data.artist;
-        if (data.url) document.getElementById('sp-link').href = data.url;
-        document.getElementById('sp-now').hidden = false;
-      })
-      .catch(function () {});
+    function poll() {
+      fetch('/api/now-playing')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          var nowEl = document.getElementById('sp-now');
+          if (data && data.isPlaying) {
+            document.getElementById('sp-art').src            = data.albumArt || '';
+            document.getElementById('sp-track').textContent  = data.title;
+            document.getElementById('sp-artist').textContent = data.artist;
+            if (data.url) document.getElementById('sp-link').href = data.url;
+            nowEl.hidden = false;
+          } else {
+            nowEl.hidden = true;
+          }
+        })
+        .catch(function () {});
+    }
+    poll();
+    setInterval(poll, 30000);
   })();
 
   // ── Goodreads currently reading ────────────────────────────────────────
