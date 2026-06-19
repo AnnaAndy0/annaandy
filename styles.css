@@ -937,8 +937,8 @@ section {
   font-size: 11px;
 }
 .curr-card .link {
-  font-family: var(--mono);
-  font-size: 11px;
+  font-family: var(--sans);
+  font-size: 13px;
   font-weight: 600;
 }
 .curr-card .body {
@@ -983,7 +983,7 @@ section {
 }
 .curr-card.listen .sp-cover {
   width: 104px;
-  height: 104px;
+  height: 152px;
   border-radius: 8px;
   overflow: hidden;
   background: #8B7EC8;
@@ -996,6 +996,25 @@ section {
   object-fit: cover;
   display: block;
 }
+.curr-card.listen .sp-track {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--navy);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.curr-card.listen .sp-artist {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a7a55;
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .curr-card.listen .sp-live {
   display: flex;
   align-items: center;
@@ -1006,7 +1025,7 @@ section {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #4a7a55;
-  margin-bottom: 6px;
+  margin-top: 10px;
 }
 .curr-card.listen .sp-dot {
   width: 7px;
@@ -1015,23 +1034,6 @@ section {
   background: #1ed760;
   flex-shrink: 0;
   animation: sp-pulse 1.8s ease-in-out infinite;
-}
-.curr-card.listen .sp-track {
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--navy);
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.curr-card.listen .sp-artist {
-  font-size: 13px;
-  color: #4a7a55;
-  margin-top: 3px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .curr-card.read {
   background: var(--lavender-soft);
