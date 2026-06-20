@@ -1162,49 +1162,7 @@ section {
 .polaroid {
   background: #fff;
   padding: 10px 10px 36px;
-  border-radius: 2px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.polaroid:nth-child(1) {
-  transform: rotate(-3deg);
-}
-.polaroid:nth-child(2) {
-  transform: rotate(2deg);
-}
-.polaroid:nth-child(3) {
-  transform: rotate(-1deg);
-}
-.polaroid:nth-child(4) {
-  transform: rotate(4deg);
-}
-.polaroid:hover {
-  transform: rotate(0deg) translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
-}
-.polaroid .pin {
-  position: absolute;
-  top: -11px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--yellow);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-.polaroid .pin::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.18);
 }
 .polaroid .photo-slot {
   position: relative;
