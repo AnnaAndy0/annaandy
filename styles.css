@@ -76,14 +76,20 @@ input:focus, textarea:focus {
   0% {
     transform: rotate(0deg);
   }
-  38% {
-    transform: rotate(calc(var(--tilt) * 1.35));
+  28% {
+    transform: rotate(calc(var(--tilt) * 1.55));
   }
-  62% {
-    transform: rotate(calc(var(--tilt) * 0.88));
+  48% {
+    transform: rotate(calc(var(--tilt) * 0.78));
   }
-  80% {
-    transform: rotate(calc(var(--tilt) * 1.06));
+  63% {
+    transform: rotate(calc(var(--tilt) * 1.18));
+  }
+  76% {
+    transform: rotate(calc(var(--tilt) * 0.93));
+  }
+  87% {
+    transform: rotate(calc(var(--tilt) * 1.04));
   }
   100% {
     transform: rotate(var(--tilt));
@@ -1185,11 +1191,11 @@ section {
   margin-top: 18px;
   transform-origin: 50% -10px;
   transform: rotate(var(--tilt, 0deg));
-  transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.3s ease;
+  transition: transform 0.55s cubic-bezier(0.34, 1.6, 0.64, 1), box-shadow 0.3s ease;
 }
 .polaroid.returning {
   transition: none;
-  animation: polaroid-return 0.7s ease forwards;
+  animation: polaroid-return 0.9s ease forwards;
 }
 .polaroid:hover {
   transform: rotate(0deg);

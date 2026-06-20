@@ -58,9 +58,11 @@ input:focus, textarea:focus { outline: 2px solid var(--blue); outline-offset: 1p
 
 @keyframes polaroid-return {
   0%   { transform: rotate(0deg); }
-  38%  { transform: rotate(calc(var(--tilt) * 1.35)); }
-  62%  { transform: rotate(calc(var(--tilt) * 0.88)); }
-  80%  { transform: rotate(calc(var(--tilt) * 1.06)); }
+  28%  { transform: rotate(calc(var(--tilt) * 1.55)); }
+  48%  { transform: rotate(calc(var(--tilt) * 0.78)); }
+  63%  { transform: rotate(calc(var(--tilt) * 1.18)); }
+  76%  { transform: rotate(calc(var(--tilt) * 0.93)); }
+  87%  { transform: rotate(calc(var(--tilt) * 1.04)); }
   100% { transform: rotate(var(--tilt)); }
 }
 
@@ -726,11 +728,11 @@ section { scroll-margin-top: 54px; }
   margin-top: 18px;
   transform-origin: 50% -10px;
   transform: rotate(var(--tilt, 0deg));
-  transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.3s ease;
+  transition: transform 0.55s cubic-bezier(0.34, 1.6, 0.64, 1), box-shadow 0.3s ease;
 
   &.returning {
     transition: none;
-    animation: polaroid-return 0.7s ease forwards;
+    animation: polaroid-return 0.9s ease forwards;
   }
 
   &:hover {
