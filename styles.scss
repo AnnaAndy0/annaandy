@@ -434,55 +434,44 @@ section { scroll-margin-top: 54px; }
   &.bg-green  { background: var(--mid-green); }
   &.bg-white  { background: #fff; border: 1.5px solid #E3DED7; }
 
-  // hover overlay
-  &::after {
-    content: 'View project ↗';
+  // full-bleed hover overlay
+  &::before {
+    content: '';
     position: absolute;
     inset: 0;
-    display: flex;
-    align-items: flex-end;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 55%);
-    color: #fff;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.04em;
+    z-index: 2;
+    background: rgba(0,0,0,0.72);
     opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 0.22s ease, transform 0.22s ease;
+    transition: opacity 0.25s ease;
     pointer-events: none;
   }
 
-  &:hover::after {
-    opacity: 1;
-    transform: translateY(0);
+  &::after {
+    content: attr(data-name) '\A View project ↗';
+    white-space: pre;
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-family: var(--serif);
+    font-size: clamp(16px, 2vw, 26px);
+    line-height: 1.3;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
   }
 
-  &:hover .img-slot img {
-    transform: scale(1.05);
-  }
+  &:hover::before,
+  &:hover::after { opacity: 1; }
 
-  // light tiles get a light overlay with dark text
-  &.bg-yellow::after,
-  &.bg-lavender::after,
-  &.bg-white::after {
-    background: linear-gradient(to top, rgba(255,255,255,0.75) 0%, transparent 55%);
-    color: var(--navy);
-  }
+  &:hover .img-slot img { transform: scale(1.05); }
 
-  .tile-label {
-    flex-shrink: 0;
-    padding: 16px 20px;
-
-    .name { font-family: var(--serif); font-size: 22px; line-height: 1.08; color: #fff; }
-
-    &.sm   { padding: 10px 14px; .name { font-size: 16px; } }
-    &.side { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 16px 20px; }
-  }
-
-  &.bg-yellow   .tile-label .name,
-  &.bg-lavender .tile-label .name { color: var(--navy); }
-  &.bg-white    .tile-label .name { color: var(--navy); }
+  .tile-label { display: none; }
 }
 
 // image drop zones

@@ -552,63 +552,43 @@ section {
   background: #fff;
   border: 1.5px solid #E3DED7;
 }
-.tile::after {
-  content: "View project ↗";
+.tile::before {
+  content: "";
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 55%);
-  color: #fff;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.04em;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.72);
   opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.22s ease, transform 0.22s ease;
+  transition: opacity 0.25s ease;
   pointer-events: none;
 }
-.tile:hover::after {
+.tile::after {
+  content: attr(data-name) "\aView project ↗";
+  white-space: pre;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: clamp(16px, 2vw, 26px);
+  line-height: 1.3;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.tile:hover::before, .tile:hover::after {
   opacity: 1;
-  transform: translateY(0);
 }
 .tile:hover .img-slot img {
   transform: scale(1.05);
 }
-.tile.bg-yellow::after, .tile.bg-lavender::after, .tile.bg-white::after {
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.75) 0%, transparent 55%);
-  color: var(--navy);
-}
 .tile .tile-label {
-  flex-shrink: 0;
-  padding: 16px 20px;
-}
-.tile .tile-label .name {
-  font-family: var(--serif);
-  font-size: 22px;
-  line-height: 1.08;
-  color: #fff;
-}
-.tile .tile-label.sm {
-  padding: 10px 14px;
-}
-.tile .tile-label.sm .name {
-  font-size: 16px;
-}
-.tile .tile-label.side {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 0;
-  padding: 16px 20px;
-}
-.tile.bg-yellow .tile-label .name, .tile.bg-lavender .tile-label .name {
-  color: var(--navy);
-}
-.tile.bg-white .tile-label .name {
-  color: var(--navy);
+  display: none;
 }
 
 .img-slot {
