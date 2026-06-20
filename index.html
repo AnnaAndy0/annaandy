@@ -714,49 +714,28 @@
 
   // ── Goodreads currently reading ────────────────────────────────────────
   (function () {
-    var rss = 'https://www.goodreads.com/review/list_rss/119804013-anna?shelf=currently-reading';
-    var api = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rss);
-    fetch(api)
-      .then(function (r) { return r.json(); })
+    fetch('/api/goodreads')
+      .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
-        if (data.status !== 'ok' || !data.items.length) return;
-        var item = data.items[0];
-        // cover image is embedded in the description HTML
-        var coverM  = item.description.match(/<img[^>]+src="([^"]+)"/);
-        var authorM = item.description.match(/by\s+<a[^>]*>([^<]+)<\/a>/i);
-        if (coverM) {
-          // Goodreads RSS serves tiny thumbnails (._SX50_.) — request a larger size
-          var cover = coverM[1].replace(/\._[A-Z]{2}\d+_\./, '._SX400_.');
-          document.getElementById('gr-cover').src = cover;
-        }
-        document.getElementById('gr-title').textContent  = item.title || '—';
-        document.getElementById('gr-author').textContent = authorM ? 'by ' + authorM[1] : '';
-        if (item.link) document.getElementById('gr-link').href = item.link;
+        if (!data) return;
+        if (data.cover) document.getElementById('gr-cover').src = data.cover;
+        document.getElementById('gr-title').textContent  = data.title || '—';
+        document.getElementById('gr-author').textContent = data.author ? 'by ' + data.author : '';
+        if (data.url) document.getElementById('gr-link').href = data.url;
       })
       .catch(function () {});
   })();
 
   // ── Letterboxd last watched ────────────────────────────────────────────
   (function () {
-    var rss = 'https://letterboxd.com/annaandy/rss/';
-    var api = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rss);
-    fetch(api)
-      .then(function (r) { return r.json(); })
+    fetch('/api/letterboxd')
+      .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
-        if (data.status !== 'ok' || !data.items.length) return;
-        // find first film diary entry (title matches "Name, YEAR")
-        var item = data.items.find(function (i) { return /,\s*\d{4}/.test(i.title); }) || data.items[0];
-        // parse "Film Name, 2024 - ★★★½"
-        var m = item.title.match(/^(.+?),\s*(\d{4})(?:\s*[-–]\s*(.+))?$/);
-        var name   = m ? m[1].trim() : item.title;
-        var year   = m ? m[2] : '';
-        var rating = m && m[3] ? m[3] : '';
-        document.getElementById('lb-title').textContent = name;
-        document.getElementById('lb-meta').textContent  = [year, rating].filter(Boolean).join(' · ');
-        // poster image in description
-        var posterM = item.description.match(/<img[^>]+src="([^"]+)"/);
-        if (posterM) document.getElementById('lb-poster').src = posterM[1];
-        if (item.link) document.getElementById('lb-link').href = item.link;
+        if (!data) return;
+        document.getElementById('lb-title').textContent = data.name || '—';
+        document.getElementById('lb-meta').textContent  = [data.year, data.rating].filter(Boolean).join(' · ');
+        if (data.poster) document.getElementById('lb-poster').src = data.poster;
+        if (data.url) document.getElementById('lb-link').href = data.url;
       })
       .catch(function () {});
   })();
