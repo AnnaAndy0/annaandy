@@ -911,15 +911,15 @@ section {
   line-height: 1.5;
 }
 .curr-card.listen {
-  background: #EBF3EC;
-  border: 1px solid #d9e7dc;
+  background: var(--navy);
+  border: none;
   min-height: unset;
 }
 .curr-card.listen .tag {
-  color: var(--mid-green);
+  color: #7BD88B;
 }
 .curr-card.listen .link {
-  color: var(--mid-green);
+  color: #7BD88B;
 }
 .curr-card.listen iframe {
   border-radius: 12px;
@@ -930,7 +930,7 @@ section {
 .curr-card.listen .caption {
   font-family: var(--serif);
   font-size: 16px;
-  color: #2c3a31;
+  color: #cfe0d7;
 }
 .curr-card.listen .sp-now {
   display: flex;
@@ -944,7 +944,7 @@ section {
   overflow: hidden;
   background: #8B7EC8;
   margin-bottom: 14px;
-  box-shadow: 5px 5px 0 var(--navy);
+  box-shadow: 5px 5px 0 var(--mid-green);
 }
 .curr-card.listen .sp-cover img {
   width: 100%;
@@ -956,7 +956,7 @@ section {
   font-family: var(--serif);
   font-size: 20px;
   line-height: 1.2;
-  color: var(--navy);
+  color: #fff;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -969,13 +969,13 @@ section {
   font-family: var(--sans);
   font-size: 12px;
   font-weight: 700;
-  color: #4a7a55;
+  color: #7BD88B;
   margin-bottom: 12px;
 }
 .curr-card.listen .sp-artist {
   font-size: 13px;
   font-weight: 500;
-  color: #4a7a55;
+  color: #9bbcab;
   margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
