@@ -1126,7 +1126,7 @@ section {
 }
 
 #lately {
-  background: var(--lavender-soft);
+  background: #D4CCF2;
   padding: var(--section-y) var(--pad);
 }
 #lately .lately-head {
@@ -1210,7 +1210,7 @@ section {
   background: radial-gradient(circle at 35% 30%, #6ba8f7, var(--blue));
 }
 .polaroid:nth-child(2) .pin {
-  background: radial-gradient(circle at 35% 30%, #b8aff0, #8B7EC8);
+  background: radial-gradient(circle at 35% 30%, #f48bbf, #d4478a);
 }
 .polaroid:nth-child(3) .pin {
   background: radial-gradient(circle at 35% 30%, #fde07a, var(--yellow));

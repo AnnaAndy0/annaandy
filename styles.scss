@@ -697,7 +697,7 @@ section { scroll-margin-top: 54px; }
 // -- lately --
 
 #lately {
-  background: var(--lavender-soft);
+  background: #D4CCF2;
   padding: var(--section-y) var(--pad);
 
   .lately-head {
@@ -754,7 +754,7 @@ section { scroll-margin-top: 54px; }
   }
 
   &:nth-child(1) .pin { background: radial-gradient(circle at 35% 30%, #6ba8f7, var(--blue)); }
-  &:nth-child(2) .pin { background: radial-gradient(circle at 35% 30%, #b8aff0, #8B7EC8); }
+  &:nth-child(2) .pin { background: radial-gradient(circle at 35% 30%, #f48bbf, #d4478a); }
   &:nth-child(3) .pin { background: radial-gradient(circle at 35% 30%, #fde07a, var(--yellow)); }
   &:nth-child(4) .pin { background: radial-gradient(circle at 35% 30%, #6dd49a, var(--mid-green)); }
 

@@ -614,6 +614,16 @@
   </div>
 </footer>
 
+<!-- lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-backdrop" id="lb-backdrop"></div>
+  <button class="lb-close" id="lb-close" aria-label="Close">✕</button>
+  <div class="lb-content">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
+
 <script>
   // clock
   function bufTime() {
@@ -813,16 +823,6 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   })();
 </script>
-
-<!-- lightbox -->
-<div class="lightbox" id="lightbox">
-  <div class="lb-backdrop" id="lb-backdrop"></div>
-  <button class="lb-close" id="lb-close" aria-label="Close">✕</button>
-  <div class="lb-content">
-    <img id="lb-img" src="" alt="">
-    <div class="lb-caption" id="lb-caption"></div>
-  </div>
-</div>
 
 </body>
 </html>
