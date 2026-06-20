@@ -944,7 +944,7 @@ section {
   overflow: hidden;
   background: #8B7EC8;
   margin-bottom: 14px;
-  box-shadow: 5px 5px 0 var(--navy);
+  box-shadow: 5px 5px 0 var(--yellow);
 }
 .curr-card.listen .sp-cover img {
   width: 100%;
