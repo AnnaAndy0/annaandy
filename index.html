@@ -781,7 +781,48 @@
   }
 
   document.querySelectorAll('.img-slot, .photo-slot').forEach(setupSlot);
+
+  // ── Photo lightbox ─────────────────────────────────────────────────────
+  (function () {
+    var lb    = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lb-img');
+    var lbCap = document.getElementById('lb-caption');
+
+    function open(src, caption) {
+      lbImg.src = src;
+      lbCap.textContent = caption;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.polaroid').forEach(function (p) {
+      p.addEventListener('click', function () {
+        var img = p.querySelector('img');
+        var cap = p.querySelector('.caption');
+        if (img) open(img.src, cap ? cap.textContent : '');
+      });
+    });
+
+    document.getElementById('lb-backdrop').addEventListener('click', close);
+    document.getElementById('lb-close').addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
 </script>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-backdrop" id="lb-backdrop"></div>
+  <button class="lb-close" id="lb-close" aria-label="Close">✕</button>
+  <div class="lb-content">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
 
 </body>
 </html>

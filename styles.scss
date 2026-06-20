@@ -753,10 +753,10 @@ section { scroll-margin-top: 54px; }
     }
   }
 
-  &:nth-child(1) .pin { background: radial-gradient(circle at 35% 30%, #f87171, #c42b2b); }
-  &:nth-child(2) .pin { background: radial-gradient(circle at 35% 30%, #6ba8f7, #2055c0); }
-  &:nth-child(3) .pin { background: radial-gradient(circle at 35% 30%, #fde07a, #d4a017); }
-  &:nth-child(4) .pin { background: radial-gradient(circle at 35% 30%, #6dd49a, #1a7a46); }
+  &:nth-child(1) .pin { background: radial-gradient(circle at 35% 30%, #6ba8f7, var(--blue)); }
+  &:nth-child(2) .pin { background: radial-gradient(circle at 35% 30%, #b8aff0, #8B7EC8); }
+  &:nth-child(3) .pin { background: radial-gradient(circle at 35% 30%, #fde07a, var(--yellow)); }
+  &:nth-child(4) .pin { background: radial-gradient(circle at 35% 30%, #6dd49a, var(--mid-green)); }
 
   .photo-slot {
     position: relative;
@@ -1023,6 +1023,84 @@ section { scroll-margin-top: 54px; }
   }
 
   .local-time { font-family: var(--sans); font-size: 12px; color: #7e9a8c; }
+}
+
+// -- lightbox --
+
+@keyframes lb-zoom-in {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes lb-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+
+  &.open {
+    display: flex;
+
+    .lb-backdrop { animation: lb-fade-in 0.25s ease forwards; }
+    .lb-content  { animation: lb-zoom-in 0.3s cubic-bezier(0.34, 1.3, 0.64, 1) forwards; }
+  }
+
+  .lb-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    cursor: pointer;
+  }
+
+  .lb-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 90vw;
+    max-height: 90vh;
+
+    img {
+      display: block;
+      max-width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+  }
+
+  .lb-caption {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+  }
+
+  .lb-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    z-index: 2;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 999px;
+    color: #fff;
+    font-size: 16px;
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+    &:hover { background: rgba(255,255,255,0.2); }
+  }
 }
 
 // -- nav toggle (hidden on desktop) --
