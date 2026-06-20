@@ -1919,6 +1919,40 @@ section {
 .proj-modal .pm-chrome span.c-g {
   background: #28C840;
 }
+.proj-modal .pm-chrome-mob {
+  display: none;
+  background: #1c1c1e;
+  height: 44px;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.proj-modal .pm-chrome-mob .pm-mob-meta {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+.proj-modal .pm-chrome-mob .pm-island {
+  width: 90px;
+  height: 26px;
+  background: #000;
+  border-radius: 999px;
+}
+.proj-modal.show-mobile .pm-chrome {
+  display: none;
+}
+.proj-modal.show-mobile .pm-chrome-mob {
+  display: flex;
+}
+.proj-modal.show-mobile .pm-browser {
+  border-radius: 28px;
+  border-color: #2a2a2a;
+  border-width: 2px;
+  background: #1c1c1e;
+  box-shadow: 0 0 0 4px #111;
+}
 .proj-modal .pm-views {
   position: relative;
   height: 320px;
