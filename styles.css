@@ -1162,7 +1162,60 @@ section {
 .polaroid {
   background: #fff;
   padding: 10px 10px 36px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+  position: relative;
+  margin-top: 18px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.polaroid:nth-child(1) {
+  transform: rotate(-1.8deg);
+}
+.polaroid:nth-child(2) {
+  transform: rotate(2.5deg);
+}
+.polaroid:nth-child(3) {
+  transform: rotate(-0.6deg);
+}
+.polaroid:nth-child(4) {
+  transform: rotate(1.8deg);
+}
+.polaroid:hover {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+}
+.polaroid .pin {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.45), inset -2px -2px 4px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.polaroid .pin::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 9px;
+  background: linear-gradient(to bottom, #999, #555);
+  border-radius: 0 0 2px 2px;
+}
+.polaroid:nth-child(1) .pin {
+  background: radial-gradient(circle at 35% 30%, #f87171, #c42b2b);
+}
+.polaroid:nth-child(2) .pin {
+  background: radial-gradient(circle at 35% 30%, #6ba8f7, #2055c0);
+}
+.polaroid:nth-child(3) .pin {
+  background: radial-gradient(circle at 35% 30%, #fde07a, #d4a017);
+}
+.polaroid:nth-child(4) .pin {
+  background: radial-gradient(circle at 35% 30%, #6dd49a, #1a7a46);
 }
 .polaroid .photo-slot {
   position: relative;
@@ -1181,7 +1234,6 @@ section {
 }
 .polaroid .caption {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 14px;
   text-align: center;
   padding: 11px 4px 0;
