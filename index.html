@@ -531,57 +531,96 @@
 <!-- project modal -->
 <div class="proj-modal" id="proj-modal">
   <div class="pm-backdrop" id="pm-backdrop"></div>
-  <div class="pm-sheet" id="pm-sheet">
-    <div class="pm-dark">
-      <button class="pm-close" id="pm-close" aria-label="Close">✕</button>
-      <div class="pm-float-row">
-        <div class="pm-float pm-hero">
-          <div class="pm-chrome"><span class="c-r"></span><span class="c-y"></span><span class="c-g"></span></div>
-          <div class="pm-scroll"><img id="pm-img-hero" src="" alt="Homepage"></div>
-        </div>
-        <div class="pm-float pm-portrait">
-          <div class="pm-scroll"><img id="pm-img-portrait" src="" alt="Mobile"></div>
-        </div>
-        <div class="pm-float pm-detail">
-          <div class="pm-chrome"><span class="c-r"></span><span class="c-y"></span><span class="c-g"></span></div>
-          <div class="pm-scroll"><img id="pm-img-detail" src="" alt="Detail"></div>
-        </div>
+  <div class="pm-sheet">
+
+    <!-- top bar -->
+    <div class="pm-top">
+      <div class="pm-title-group">
+        <h2 class="pm-name" id="pm-name"></h2>
+        <span class="pm-industry" id="pm-industry"></span>
       </div>
-      <div class="pm-strip-wrap">
-        <div class="pm-float pm-strip">
-          <div class="pm-scroll"><img id="pm-img-strip" src="" alt="Wide view"></div>
+      <div class="pm-top-right">
+        <a class="pm-live" id="pm-live" href="#" target="_blank" rel="noopener">Visit live site ↗</a>
+        <div class="pm-toggle">
+          <button class="pm-tog active" data-view="desktop">Desktop</button>
+          <button class="pm-tog" data-view="mobile">Mobile</button>
         </div>
+        <button class="pm-close" id="pm-close" aria-label="Close">✕</button>
       </div>
     </div>
-    <div class="pm-info">
-      <div class="pm-info-top">
-        <h2 class="pm-name" id="pm-name"></h2>
-        <a class="pm-domain" id="pm-domain" href="#" target="_blank" rel="noopener"></a>
-      </div>
-      <p class="pm-desc" id="pm-desc"></p>
-      <div class="pm-tags" id="pm-tags"></div>
-      <div class="pm-spec-row">
-        <div class="pm-spec">
-          <span class="pm-spec-lbl">Built in</span>
-          <span class="pm-spec-val" id="pm-built"></span>
-        </div>
-        <div class="pm-spec-div"></div>
-        <div class="pm-spec">
-          <span class="pm-spec-lbl">Role</span>
-          <span class="pm-spec-val">Design &amp; Development</span>
-        </div>
-        <div class="pm-spec-div"></div>
-        <div class="pm-spec">
-          <span class="pm-spec-lbl">Core Web Vitals</span>
-          <div class="pm-vitals-row">
-            <span class="pm-v"><span class="pm-vn" id="vs-perf"></span><span class="pm-vl">Perf</span></span>
-            <span class="pm-v"><span class="pm-vn" id="vs-a11y"></span><span class="pm-vl">A11y</span></span>
-            <span class="pm-v"><span class="pm-vn" id="vs-bp"></span><span class="pm-vl">BP</span></span>
-            <span class="pm-v"><span class="pm-vn" id="vs-seo"></span><span class="pm-vl">SEO</span></span>
+
+    <!-- three panels -->
+    <div class="pm-screens">
+
+      <div class="pm-screen-col">
+        <div class="pm-screen-lbl">Homepage</div>
+        <div class="pm-browser">
+          <div class="pm-chrome"><span class="c-r"></span><span class="c-y"></span><span class="c-g"></span></div>
+          <div class="pm-views">
+            <div class="pm-view desktop"><img id="pm-home-d" src="" alt="Homepage desktop"></div>
+            <div class="pm-view mobile"><img id="pm-home-m" src="" alt="Homepage mobile"></div>
           </div>
         </div>
       </div>
+
+      <div class="pm-screen-col">
+        <div class="pm-screen-lbl" id="pm-int-lbl">Internal page</div>
+        <div class="pm-browser">
+          <div class="pm-chrome"><span class="c-r"></span><span class="c-y"></span><span class="c-g"></span></div>
+          <div class="pm-views">
+            <div class="pm-view desktop"><img id="pm-int-d" src="" alt="Internal desktop"></div>
+            <div class="pm-view mobile"><img id="pm-int-m" src="" alt="Internal mobile"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pm-screen-col">
+        <div class="pm-screen-lbl">Core Web Vitals</div>
+        <div class="pm-vitals-panel">
+          <div class="pm-vital">
+            <div class="pm-gauge-wrap">
+              <svg class="pm-gauge-svg" viewBox="0 0 100 100"><circle class="pm-gauge-track" cx="50" cy="50" r="40"/><circle class="pm-gauge-fill" id="vg-perf" cx="50" cy="50" r="40"/></svg>
+              <span class="pm-gauge-num" id="vs-perf"></span>
+            </div>
+            <div class="pm-vital-lbl">Performance</div>
+          </div>
+          <div class="pm-vital">
+            <div class="pm-gauge-wrap">
+              <svg class="pm-gauge-svg" viewBox="0 0 100 100"><circle class="pm-gauge-track" cx="50" cy="50" r="40"/><circle class="pm-gauge-fill" id="vg-a11y" cx="50" cy="50" r="40"/></svg>
+              <span class="pm-gauge-num" id="vs-a11y"></span>
+            </div>
+            <div class="pm-vital-lbl">Accessibility</div>
+          </div>
+          <div class="pm-vital">
+            <div class="pm-gauge-wrap">
+              <svg class="pm-gauge-svg" viewBox="0 0 100 100"><circle class="pm-gauge-track" cx="50" cy="50" r="40"/><circle class="pm-gauge-fill" id="vg-bp" cx="50" cy="50" r="40"/></svg>
+              <span class="pm-gauge-num" id="vs-bp"></span>
+            </div>
+            <div class="pm-vital-lbl">Best Practices</div>
+          </div>
+          <div class="pm-vital">
+            <div class="pm-gauge-wrap">
+              <svg class="pm-gauge-svg" viewBox="0 0 100 100"><circle class="pm-gauge-track" cx="50" cy="50" r="40"/><circle class="pm-gauge-fill" id="vg-seo" cx="50" cy="50" r="40"/></svg>
+              <span class="pm-gauge-num" id="vs-seo"></span>
+            </div>
+            <div class="pm-vital-lbl">SEO</div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- info -->
+    <div class="pm-info">
+      <p class="pm-desc" id="pm-desc"></p>
+      <div class="pm-meta">
+        <div class="pm-stack-head">Stack</div>
+        <div class="pm-tags" id="pm-tags"></div>
+        <div class="pm-detail"><span class="pm-detail-lbl">Built in</span><span id="pm-built"></span></div>
+        <div class="pm-detail"><span class="pm-detail-lbl">Role</span><span>Design &amp; Development</span></div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -829,80 +868,98 @@
   (function () {
     var PROJECTS = {
       'Evaporation King': {
-        domain: 'evaporationking.com', url: '#',
+        industry: 'Industrial B2B',
+        url: '#',
         description: "The only references they sent were Apple and Stripe. I had it live in under a week. Custom video hero, four product lines, ten industry verticals, interactive spec comparison that engineers actually use.",
         stack: ['WordPress', 'ACF', 'PHP', 'SCSS', 'JavaScript'],
         builtIn: '< 1 week',
-        screens: { hero: '', portrait: '', detail: '', strip: '' },
+        internalLabel: 'Product page',
+        screens: { desktop: { home: '', internal: '' }, mobile: { home: '', internal: '' } },
         vitals: { perf: 94, a11y: 98, bp: 100, seo: 100 },
       },
       'Sun Kool AC': {
-        domain: 'sunkoolac.com', url: '#',
-        description: "Service company losing leads to the franchise down the street. Online booking, service-area pages, before-and-after gallery. Fixed.",
+        industry: 'HVAC & Cooling',
+        url: '#',
+        description: "Service company losing leads to the franchise down the street. Online booking, service-area landing pages, before-and-after gallery. Fixed.",
         stack: ['WordPress', 'ACF', 'PHP', 'SCSS'],
         builtIn: '1 week',
-        screens: { hero: '', portrait: '', detail: '', strip: '' },
+        internalLabel: 'Services',
+        screens: { desktop: { home: '', internal: '' }, mobile: { home: '', internal: '' } },
         vitals: { perf: 91, a11y: 96, bp: 100, seo: 100 },
       },
       'Herban Kulture': {
-        domain: 'herbankulture.com', url: '#',
+        industry: 'Cannabis Retail',
+        url: '#',
         description: "Cannabis retail before it was everywhere in Buffalo. Built the brand identity alongside the site — logo, palette, tone of voice. Keeps running without me touching it.",
         stack: ['WordPress', 'WooCommerce', 'ACF', 'PHP', 'SCSS'],
         builtIn: '2 weeks',
-        screens: { hero: '', portrait: '', detail: '', strip: '' },
+        internalLabel: 'Shop',
+        screens: { desktop: { home: '', internal: '' }, mobile: { home: '', internal: '' } },
         vitals: { perf: 88, a11y: 94, bp: 100, seo: 100 },
       },
       'StashMaster NYC': {
-        domain: 'stashmasternyc.com', url: '#',
+        industry: 'Cannabis Accessories',
+        url: '#',
         description: "E-commerce for cannabis accessories shipping to 38 states. Compliance was the hard part. Product filtering across 200+ SKUs, age gate, state restriction logic baked into the cart.",
         stack: ['WooCommerce', 'ACF', 'PHP', 'JavaScript', 'SCSS'],
         builtIn: '3 weeks',
-        screens: { hero: '', portrait: '', detail: '', strip: '' },
+        internalLabel: 'Product listing',
+        screens: { desktop: { home: '', internal: '' }, mobile: { home: '', internal: '' } },
         vitals: { perf: 86, a11y: 92, bp: 100, seo: 100 },
       },
       'IWS 360': {
-        domain: 'iws360.com', url: '#',
+        industry: 'Industrial B2B',
+        url: '#',
         description: "360-degree inspection software that needed to look like it had a Series A. It didn't. Two weeks, full rebrand, custom dashboard UI, client portal.",
         stack: ['WordPress', 'ACF', 'JavaScript', 'SCSS', 'PHP'],
         builtIn: '2 weeks',
-        screens: { hero: '', portrait: '', detail: '', strip: '' },
+        internalLabel: 'Dashboard',
+        screens: { desktop: { home: '', internal: '' }, mobile: { home: '', internal: '' } },
         vitals: { perf: 93, a11y: 97, bp: 100, seo: 100 },
       },
       'Northtowns Cannabis': {
-        domain: 'northtownscannabis.com', url: '#',
+        industry: 'Cannabis Dispensary',
+        url: '#',
         description: "Dispensary site with a real visual identity instead of the usual leaf-and-green defaults. Live menu integration, strain filtering, curbside pickup scheduling.",
         stack: ['WordPress', 'ACF', 'PHP', 'SCSS', 'JavaScript'],
         builtIn: '2 weeks',
-        screens: { hero: '', portrait: '', detail: '', strip: '' },
+        internalLabel: 'Menu',
+        screens: { desktop: { home: '', internal: '' }, mobile: { home: '', internal: '' } },
         vitals: { perf: 89, a11y: 95, bp: 100, seo: 100 },
       },
       'Paragon Roofing': {
-        domain: 'paragonroofingwny.com', url: '#',
+        industry: 'Home Services',
+        url: '#',
         description: "Roofing companies usually have terrible websites. This one doesn't anymore. Estimate request flow, project gallery, financing options.",
         stack: ['WordPress', 'ACF', 'PHP', 'SCSS'],
         builtIn: '< 1 week',
-        screens: { hero: '', portrait: '', detail: '', strip: '' },
+        internalLabel: 'Services',
+        screens: { desktop: { home: '', internal: '' }, mobile: { home: '', internal: '' } },
         vitals: { perf: 95, a11y: 98, bp: 100, seo: 100 },
       },
       'Work Order Pro': {
-        domain: 'workorderpro.com', url: '#',
+        industry: 'Field Service SaaS',
+        url: '#',
         description: "Field service SaaS — work orders, scheduling, client portal. Complex product, clean interface. Built the entire front end from a Figma file that kept changing.",
         stack: ['React', 'Node.js', 'PHP', 'SCSS', 'MySQL'],
         builtIn: '6 weeks',
-        screens: { hero: '', portrait: '', detail: '', strip: '' },
+        internalLabel: 'Work orders',
+        screens: { desktop: { home: '', internal: '' }, mobile: { home: '', internal: '' } },
         vitals: { perf: 97, a11y: 100, bp: 100, seo: 100 },
       },
     };
 
-    function vColor(n) {
-      return n >= 90 ? '#0cce6b' : n >= 50 ? '#ffa400' : '#ff4e42';
-    }
+    var CIRC = 251.3;
 
-    function setVital(id, val) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      el.textContent = val != null ? val : '—';
-      el.style.color = val != null ? vColor(val) : 'var(--muted)';
+    function vColor(n) { return n >= 90 ? '#0cce6b' : n >= 50 ? '#ffa400' : '#ff4e42'; }
+
+    function setGauge(fillId, numId, score) {
+      var fill = document.getElementById(fillId);
+      var num  = document.getElementById(numId);
+      if (!fill || !num) return;
+      fill.style.strokeDashoffset = score != null ? CIRC - (score / 100) * CIRC : CIRC;
+      fill.style.stroke           = score != null ? vColor(score) : '#DAD2C2';
+      num.textContent             = score != null ? score : '—';
     }
 
     var modal = document.getElementById('proj-modal');
@@ -910,24 +967,34 @@
     function openModal(name) {
       var p = PROJECTS[name];
       if (!p) return;
-      document.getElementById('pm-name').textContent = name;
-      var domEl = document.getElementById('pm-domain');
-      domEl.textContent = p.domain + ' ↗';
-      domEl.href = p.url || '#';
-      document.getElementById('pm-desc').textContent = p.description;
-      document.getElementById('pm-built').textContent = p.builtIn;
-      document.getElementById('pm-img-hero').src    = p.screens.hero    || '';
-      document.getElementById('pm-img-portrait').src = p.screens.portrait || '';
-      document.getElementById('pm-img-detail').src  = p.screens.detail  || '';
-      document.getElementById('pm-img-strip').src   = p.screens.strip   || '';
-      setVital('vs-perf', p.vitals.perf);
-      setVital('vs-a11y', p.vitals.a11y);
-      setVital('vs-bp',   p.vitals.bp);
-      setVital('vs-seo',  p.vitals.seo);
-      var tagsEl = document.getElementById('pm-tags');
-      tagsEl.innerHTML = p.stack.map(function (t) {
+
+      document.getElementById('pm-name').textContent     = name;
+      document.getElementById('pm-industry').textContent = p.industry || '';
+      document.getElementById('pm-live').href            = p.url || '#';
+      document.getElementById('pm-int-lbl').textContent  = p.internalLabel || 'Internal page';
+      document.getElementById('pm-desc').textContent     = p.description;
+      document.getElementById('pm-built').textContent    = p.builtIn;
+
+      document.getElementById('pm-home-d').src = p.screens.desktop.home     || '';
+      document.getElementById('pm-home-m').src = p.screens.mobile.home      || '';
+      document.getElementById('pm-int-d').src  = p.screens.desktop.internal || '';
+      document.getElementById('pm-int-m').src  = p.screens.mobile.internal  || '';
+
+      setGauge('vg-perf', 'vs-perf', p.vitals.perf);
+      setGauge('vg-a11y', 'vs-a11y', p.vitals.a11y);
+      setGauge('vg-bp',   'vs-bp',   p.vitals.bp);
+      setGauge('vg-seo',  'vs-seo',  p.vitals.seo);
+
+      document.getElementById('pm-tags').innerHTML = p.stack.map(function (t) {
         return '<span class="pm-tag">' + t + '</span>';
       }).join('');
+
+      // reset to desktop view
+      modal.classList.remove('show-mobile');
+      document.querySelectorAll('.pm-tog').forEach(function (b) {
+        b.classList.toggle('active', b.dataset.view === 'desktop');
+      });
+
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -941,6 +1008,16 @@
     document.getElementById('pm-backdrop').addEventListener('click', closeModal);
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    document.querySelectorAll('.pm-tog').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var isMobile = btn.dataset.view === 'mobile';
+        modal.classList.toggle('show-mobile', isMobile);
+        document.querySelectorAll('.pm-tog').forEach(function (b) {
+          b.classList.toggle('active', b.dataset.view === btn.dataset.view);
+        });
+      });
     });
 
     document.querySelectorAll('.tile[data-name]').forEach(function (tile) {
