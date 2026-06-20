@@ -25,7 +25,7 @@ module.exports = async function handler(req, res) {
       const posterM = descM && descM[1].match(/<img[^>]+src="([^"]+)"/);
 
       return res.status(200).json({
-        name:   m[1].trim(),
+        name:   m[1].trim().replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'"),
         year:   m[2],
         rating: m[3] ? m[3].trim() : '',
         poster: posterM ? posterM[1] : null,
