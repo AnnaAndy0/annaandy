@@ -911,15 +911,15 @@ section {
   line-height: 1.5;
 }
 .curr-card.listen {
-  background: var(--navy);
+  background: var(--blue);
   border: none;
   min-height: unset;
 }
 .curr-card.listen .tag {
-  color: #7BD88B;
+  color: var(--yellow);
 }
 .curr-card.listen .link {
-  color: #7BD88B;
+  color: var(--yellow);
 }
 .curr-card.listen iframe {
   border-radius: 12px;
@@ -930,7 +930,7 @@ section {
 .curr-card.listen .caption {
   font-family: var(--serif);
   font-size: 16px;
-  color: #cfe0d7;
+  color: rgba(255, 255, 255, 0.8);
 }
 .curr-card.listen .sp-now {
   display: flex;
@@ -944,7 +944,7 @@ section {
   overflow: hidden;
   background: #8B7EC8;
   margin-bottom: 14px;
-  box-shadow: 5px 5px 0 var(--mid-green);
+  box-shadow: 5px 5px 0 var(--navy);
 }
 .curr-card.listen .sp-cover img {
   width: 100%;
@@ -969,13 +969,13 @@ section {
   font-family: var(--sans);
   font-size: 12px;
   font-weight: 700;
-  color: #7BD88B;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 12px;
 }
 .curr-card.listen .sp-artist {
   font-size: 13px;
   font-weight: 500;
-  color: #9bbcab;
+  color: rgba(255, 255, 255, 0.7);
   margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
