@@ -792,12 +792,19 @@
 
   document.querySelectorAll('.img-slot, .photo-slot').forEach(setupSlot);
 
-  // ── Random polaroid tilt ───────────────────────────────────────────────
-  document.querySelectorAll('.polaroid').forEach(function (p) {
-    var deg = (Math.random() * 5.5 - 2.75);
-    if (Math.abs(deg) < 0.6) deg = deg < 0 ? -0.8 : 0.8;
-    p.style.setProperty('--tilt', deg.toFixed(2) + 'deg');
-  });
+  // ── Random polaroid tilt — unique zones, shuffled each load ───────────
+  (function () {
+    var zones = [[-2.6, -1.6], [-1.4, -0.7], [0.7, 1.4], [1.6, 2.6]];
+    for (var i = zones.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = zones[i]; zones[i] = zones[j]; zones[j] = t;
+    }
+    document.querySelectorAll('.polaroid').forEach(function (p, i) {
+      var r = zones[i % zones.length];
+      var deg = (Math.random() * (r[1] - r[0]) + r[0]).toFixed(2);
+      p.style.setProperty('--tilt', deg + 'deg');
+    });
+  })();
 
   // ── Photo lightbox ─────────────────────────────────────────────────────
   (function () {

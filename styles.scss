@@ -706,7 +706,7 @@ section { scroll-margin-top: 54px; }
     .hint { font-weight: 600; font-size: 14px; color: #8B7EC8; }
   }
 
-  .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; align-items: start; padding-top: 16px; }
+  .photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; align-items: start; padding-top: 16px; }
 }
 
 .polaroid {
@@ -1130,6 +1130,8 @@ section { scroll-margin-top: 54px; }
 
 @media (max-width: 900px) {
 
+  #lately .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+
   #stack .panels {
     grid-template-columns: 1fr;
   }
@@ -1236,6 +1238,8 @@ section { scroll-margin-top: 54px; }
 }
 
 @media (max-width: 600px) {
+
+  #lately .photo-grid { grid-template-columns: 1fr; gap: 28px; }
 
   .bento {
     grid-template-columns: 1fr;
