@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Young+Serif&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap");
 :root {
   --blue: #2F6BD8;
   --navy: #1B241E;
@@ -216,7 +216,7 @@ section {
   color: var(--forest);
 }
 .hero .mono-line {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 13px;
   color: #8a837a;
   margin-top: 22px;
@@ -252,7 +252,7 @@ section {
   gap: 6px;
 }
 .hero .sticker .label {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 9px;
   color: #b8b0a6;
   letter-spacing: 0.08em;
@@ -288,7 +288,7 @@ section {
   height: 82px;
   background: var(--lavender);
   color: var(--navy);
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-weight: 700;
   font-size: 20px;
   display: flex;
@@ -531,7 +531,7 @@ section {
   padding: 18px 22px;
 }
 .tile .tile-label .domain {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
   color: rgba(255, 255, 255, 0.5);
   display: block;
@@ -551,7 +551,7 @@ section {
   line-height: 1.4;
 }
 .tile .tile-label .stack {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
   color: var(--yellow);
   margin-top: 8px;
@@ -626,7 +626,7 @@ section {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
   color: rgba(255, 255, 255, 0.3);
   text-align: center;
@@ -728,7 +728,7 @@ section {
   margin-top: 28px;
 }
 .card-designer .group .head {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -794,7 +794,7 @@ section {
   margin-top: 28px;
 }
 .card-developer .group .head {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -818,7 +818,7 @@ section {
   color: #EAE6DB;
 }
 .card-developer .cert {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
   color: #5f7a6c;
   margin-top: 28px;
@@ -877,7 +877,7 @@ section {
   min-width: 240px;
 }
 .card-edu .head {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -1180,7 +1180,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
   color: rgba(0, 0, 0, 0.2);
   pointer-events: none;
@@ -1322,7 +1322,7 @@ section {
   margin-top: 3px;
 }
 #radar .newsletter .arr {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 13px;
   color: #b9b0a6;
   flex-shrink: 0;
@@ -1396,7 +1396,7 @@ section {
   color: #8B7EC8;
 }
 #radar .opinions .op .sub {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 12px;
 }
 #radar .opinions .op.blue .sub {
@@ -1437,7 +1437,7 @@ section {
   border: 1px solid #ECE3CC;
   border-radius: 999px;
   padding: 7px 16px;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 12px;
   font-weight: 600;
   color: #9a7a1e;
@@ -1474,7 +1474,7 @@ section {
   gap: 14px;
 }
 .gb-form label {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1521,7 +1521,7 @@ section {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
 }
 .gb-note .from {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -1564,7 +1564,7 @@ section {
   margin-top: 44px;
 }
 #hello .contact {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 13px;
   color: #cdddf8;
   margin-top: 28px;
@@ -1611,7 +1611,7 @@ section {
   color: #9bbcab;
 }
 .site-footer .tech {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
   color: #5f7a6c;
   margin-top: 6px;
@@ -1628,12 +1628,12 @@ section {
   gap: 9px;
 }
 .site-footer .hit-count .label {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 12px;
   color: #7e9a8c;
 }
 .site-footer .hit-count .counter {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.22em;
@@ -1644,7 +1644,7 @@ section {
   border: 1px solid #2a4d3c;
 }
 .site-footer .local-time {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 12px;
   color: #7e9a8c;
 }
