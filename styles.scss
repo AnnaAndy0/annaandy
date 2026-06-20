@@ -1189,9 +1189,10 @@ section { scroll-margin-top: 54px; }
   }
 
   .pm-industry {
+    font-family: var(--sans);
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
     background: #EDE8E0;
@@ -1265,10 +1266,12 @@ section { scroll-margin-top: 54px; }
   }
 
   .pm-screen-lbl {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--muted);
-    letter-spacing: 0.04em;
     margin-bottom: 6px;
   }
 
@@ -1309,17 +1312,21 @@ section { scroll-margin-top: 54px; }
     .pm-chrome     { display: none; }
     .pm-chrome-mob { display: flex; }
     .pm-browser {
-      border-radius: 28px;
-      border-color: #2a2a2a;
-      border-width: 2px;
+      max-width: 240px;
+      margin: 0 auto;
+      border-radius: 36px;
+      border: 2.5px solid #2a2a2a;
       background: #1c1c1e;
-      box-shadow: 0 0 0 4px #111;
+      box-shadow: 0 0 0 5px #111;
+    }
+    .pm-views {
+      aspect-ratio: 9 / 19.5;
     }
   }
 
   .pm-views {
     position: relative;
-    height: 320px;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #e8e4de;
   }
@@ -1342,7 +1349,6 @@ section { scroll-margin-top: 54px; }
 
   // vitals panel
   .pm-vitals-panel {
-    height: 320px;
     background: #F0EBE3;
     border: 1.5px solid #DAD2C2;
     border-radius: 8px;
@@ -1391,11 +1397,13 @@ section { scroll-margin-top: 54px; }
   }
 
   .pm-vital-lbl {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--muted);
     text-align: center;
-    letter-spacing: 0.04em;
   }
 
   // info
@@ -1418,10 +1426,10 @@ section { scroll-margin-top: 54px; }
   .pm-meta { display: flex; flex-direction: column; gap: 10px; }
 
   .pm-stack-head {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--muted);
     padding-bottom: 8px;
@@ -1449,7 +1457,7 @@ section { scroll-margin-top: 54px; }
   }
 
   .pm-detail-lbl {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 0.1em;
