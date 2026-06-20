@@ -1167,7 +1167,7 @@ section {
   overflow: hidden;
   background: #EDE8E0;
   cursor: pointer;
-  height: 240px;
+  aspect-ratio: 1/1;
 }
 .polaroid .photo-slot img {
   width: 100%;
