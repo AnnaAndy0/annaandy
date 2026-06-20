@@ -72,6 +72,23 @@ input:focus, textarea:focus {
     transform: rotate(360deg);
   }
 }
+@keyframes polaroid-return {
+  0% {
+    transform: rotate(0deg);
+  }
+  38% {
+    transform: rotate(calc(var(--tilt) * 1.35));
+  }
+  62% {
+    transform: rotate(calc(var(--tilt) * 0.88));
+  }
+  80% {
+    transform: rotate(calc(var(--tilt) * 1.06));
+  }
+  100% {
+    transform: rotate(var(--tilt));
+  }
+}
 @keyframes sp-pulse {
   0%, 100% {
     opacity: 1;
@@ -1170,10 +1187,15 @@ section {
   transform: rotate(var(--tilt, 0deg));
   transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.3s ease;
 }
+.polaroid.returning {
+  transition: none;
+  animation: polaroid-return 0.7s ease forwards;
+}
 .polaroid:hover {
   transform: rotate(0deg);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
   z-index: 2;
+  animation: none;
 }
 .polaroid .pin {
   position: absolute;

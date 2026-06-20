@@ -791,6 +791,21 @@
 
   document.querySelectorAll('.img-slot, .photo-slot').forEach(setupSlot);
 
+  // ── Polaroid physics swing-back on mouse leave ────────────────────────
+  document.querySelectorAll('.polaroid').forEach(function (p) {
+    p.addEventListener('mouseenter', function () {
+      p.classList.remove('returning');
+    });
+    p.addEventListener('mouseleave', function () {
+      p.classList.add('returning');
+      function done() {
+        p.classList.remove('returning');
+        p.removeEventListener('animationend', done);
+      }
+      p.addEventListener('animationend', done);
+    });
+  });
+
   // ── Random polaroid tilt — unique zones, shuffled each load ───────────
   (function () {
     var zones = [[-2.6, -1.6], [-1.4, -0.7], [0.7, 1.4], [1.6, 2.6]];
