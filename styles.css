@@ -1164,6 +1164,7 @@ section {
   padding: 10px 10px 36px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
   position: relative;
+  z-index: 1;
   margin-top: 18px;
   transform-origin: 50% -10px;
   transform: rotate(var(--tilt, 0deg));
@@ -1172,6 +1173,7 @@ section {
 .polaroid:hover {
   transform: rotate(0deg);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 .polaroid .pin {
   position: absolute;
