@@ -714,14 +714,22 @@
 
   // ── Goodreads currently reading ────────────────────────────────────────
   (function () {
-    fetch('/api/goodreads')
-      .then(function (r) { return r.ok ? r.json() : null; })
+    var rss = 'https://www.goodreads.com/review/list_rss/119804013-anna?shelf=currently-reading';
+    var api = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rss);
+    fetch(api)
+      .then(function (r) { return r.json(); })
       .then(function (data) {
-        if (!data) return;
-        if (data.cover) document.getElementById('gr-cover').src = data.cover;
-        document.getElementById('gr-title').textContent  = data.title || '—';
-        document.getElementById('gr-author').textContent = data.author ? 'by ' + data.author : '';
-        if (data.url) document.getElementById('gr-link').href = data.url;
+        if (data.status !== 'ok' || !data.items.length) return;
+        var item = data.items[0];
+        var coverM  = item.description.match(/<img[^>]+src="([^"]+)"/);
+        var authorM = item.description.match(/by\s+<a[^>]*>([^<]+)<\/a>/i);
+        if (coverM) {
+          var cover = coverM[1].replace(/\._[A-Z]{2}\d+_\./, '._SX400_.');
+          document.getElementById('gr-cover').src = cover;
+        }
+        document.getElementById('gr-title').textContent  = item.title || '—';
+        document.getElementById('gr-author').textContent = authorM ? 'by ' + authorM[1] : '';
+        if (item.link) document.getElementById('gr-link').href = item.link;
       })
       .catch(function () {});
   })();
