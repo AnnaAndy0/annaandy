@@ -286,9 +286,8 @@
         <div class="tag">Listening</div>
         <a href="https://open.spotify.com/user/annaandy" target="_blank" rel="noopener" class="link" id="sp-link">Spotify ↗</a>
       </div>
-      <!-- shown when something is playing -->
       <div class="sp-now" id="sp-now" hidden>
-        <div class="sp-live"><span class="sp-dot"></span>Now Playing</div>
+        <div class="sp-live"><span class="sp-dot" id="sp-dot"></span><span id="sp-label">Now Playing</span></div>
         <div class="sp-cover"><img class="sp-art" id="sp-art" src="" alt=""></div>
         <div class="sp-track" id="sp-track"></div>
         <div class="sp-artist" id="sp-artist"></div>
@@ -621,11 +620,13 @@
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (data) {
           var nowEl = document.getElementById('sp-now');
-          if (data && data.isPlaying) {
+          if (data && data.title) {
             document.getElementById('sp-art').src            = data.albumArt || '';
             document.getElementById('sp-track').textContent  = data.title;
             document.getElementById('sp-artist').textContent = data.artist;
             if (data.url) document.getElementById('sp-link').href = data.url;
+            document.getElementById('sp-label').textContent  = data.isPlaying ? 'Now Playing' : 'Last played';
+            document.getElementById('sp-dot').style.display  = data.isPlaying ? '' : 'none';
             nowEl.hidden = false;
           } else {
             nowEl.hidden = true;
