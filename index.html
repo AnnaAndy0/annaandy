@@ -792,6 +792,13 @@
 
   document.querySelectorAll('.img-slot, .photo-slot').forEach(setupSlot);
 
+  // ── Random polaroid tilt ───────────────────────────────────────────────
+  document.querySelectorAll('.polaroid').forEach(function (p) {
+    var deg = (Math.random() * 5.5 - 2.75);
+    if (Math.abs(deg) < 0.6) deg = deg < 0 ? -0.8 : 0.8;
+    p.style.setProperty('--tilt', deg.toFixed(2) + 'deg');
+  });
+
   // ── Photo lightbox ─────────────────────────────────────────────────────
   (function () {
     var lb    = document.getElementById('lightbox');
