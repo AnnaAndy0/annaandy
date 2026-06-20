@@ -7,8 +7,10 @@ module.exports = async function handler(req, res) {
 
   try {
     const rssRes = await fetch(
-      'https://www.goodreads.com/review/list_rss/119804013-anna?shelf=currently-reading'
+      'https://www.goodreads.com/review/list_rss/119804013-anna?shelf=currently-reading',
+      { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; portfolio-rss-reader/1.0)' } }
     );
+    if (!rssRes.ok) return res.status(200).json(null);
     const xml = await rssRes.text();
 
     const items = xml.match(/<item>([\s\S]*?)<\/item>/g) || [];
